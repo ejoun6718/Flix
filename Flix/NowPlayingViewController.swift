@@ -97,6 +97,22 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    
+    // Get the index path from the cell that was tapped
+    let indexPath = tableView.indexPathForSelectedRow
+    // Get the Row of the Index Path and set as index
+    let index = indexPath?.row
+    // Get in touch with the DetailViewController
+    if segue.identifier == "DetailSegue" {
+        let detailViewController = segue.destination as! DetailViewController
+        let selectedMovie = movies[index!]
+        // Pass on the data to the Detail ViewController
+        detailViewController.movie = selectedMovie
+    }
+  }
 }
 
 
