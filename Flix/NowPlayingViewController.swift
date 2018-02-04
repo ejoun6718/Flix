@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import KRProgressHUD
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
   
@@ -16,13 +17,18 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
       self.tableView.rowHeight = 150
     }
   }
-  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
   
   var movies: [[String: Any]] = []
   var refreshControl: UIRefreshControl!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    KRProgressHUD
+      .set(style: .custom(background: .black, text: .white, icon: nil))
+      .set(maskType: .white)
+    
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector (NowPlayingViewController.didPullToRefresh(_:)), for: . valueChanged)
@@ -33,7 +39,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
   }
   
   @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
-    activityIndicator.startAnimating()
+    KRProgressHUD.show()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+      KRProgressHUD.dismiss()
+    }
     fetchMovies()
   }
     
@@ -53,7 +63,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             // Wait for network request
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
-          self.activityIndicator.stopAnimating()
           }
         }
       task.resume()

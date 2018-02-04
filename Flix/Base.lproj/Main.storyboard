@@ -45,7 +45,7 @@
                                                     <rect key="frame" x="166" y="40" width="194" height="145"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">"Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history."</string>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -59,17 +59,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="SlZ-Gr-9TV">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="SlZ-Gr-9TV" id="Mb0-R0-qq9"/>
                         <outlet property="tableView" destination="zBT-By-Xr4" id="Iut-kx-3ZD"/>
                     </connections>
                 </viewController>
