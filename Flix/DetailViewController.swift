@@ -28,7 +28,6 @@ class DetailViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    
     if let movie = movie {
       titleLabel.text = movie["title"] as? String
       releaseDateLabel.text = movie["release_date"] as? String
