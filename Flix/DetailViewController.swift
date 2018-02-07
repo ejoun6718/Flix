@@ -8,27 +8,42 @@
 
 import UIKit
 
+enum MovieKeys {
+  static let title = "title"
+  static let backdropPath = "backdrop_path"
+  static let posterPath = "poster_path"
+}
+
 class DetailViewController: UIViewController {
-  var movie: [String: Any]?
   
   @IBOutlet weak var photoImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var overviewLabel: UILabel!
+  @IBOutlet weak var backDropImageView: UIImageView!
+  @IBOutlet weak var releaseDateLabel: UILabel!
+  
+  var movie: [String: Any]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    titleLabel.text = movie!["title"] as? String
-    overviewLabel.text = movie!["overview"] as? String
-    overviewLabel.sizeToFit()
-    if let posterPathString = movie!["poster_path"] as? String {
+    
+    if let movie = movie {
+      titleLabel.text = movie["title"] as? String
+      releaseDateLabel.text = movie["release_date"] as? String
+      overviewLabel.text = movie["overview"] as? String
+      overviewLabel.sizeToFit()
+      
+      let backdropPathString = movie[MovieKeys.backdropPath] as! String
+      let posterPathString = movie[MovieKeys.posterPath] as! String
       let baseURLString = "https://image.tmdb.org/t/p/w500"
-      let posterURL = URL(string: baseURLString + posterPathString)!
-      photoImageView.af_setImage(withURL: posterURL)
-    }
-    else {
-      photoImageView.image = nil
+      
+      let backdropURL = URL(string: baseURLString + backdropPathString)!
+      backDropImageView.af_setImage(withURL:backdropURL)
+      
+      let posterPathURL = URL(string: baseURLString + posterPathString)!
+      photoImageView.af_setImage(withURL: posterPathURL)
     }
   }
   
