@@ -104,8 +104,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-I had trouble accessing the API. It turned out I had misentered a value for a
-parameter by entering the movie's name instead of its id.
+
+I had trouble accessing the API. It turned out I was misentering a value for a
+parameter by using the movie's name instead of its id.
 
 ## License
 
