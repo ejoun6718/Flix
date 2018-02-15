@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -108,13 +110,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-ds-WZQ">
-                                <rect key="frame" x="0.0" y="62" width="375" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-ds-WZQ">
+                                <rect key="frame" x="0.0" y="62" width="375" height="222.5"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhX-Wh-90a">
-                                <rect key="frame" x="16" y="225" width="108" height="146"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UhX-Wh-90a">
+                                <rect key="frame" x="16" y="211.5" width="108" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="aUg-PO-nsK"/>
+                                    <constraint firstAttribute="width" constant="108" id="oVD-nz-462"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-VT-YfV">
                                 <rect key="frame" x="132" y="339" width="216" height="38"/>
@@ -125,6 +129,14 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wr4-ds-WZQ" firstAttribute="top" secondItem="QhL-Bv-71A" secondAttribute="top" constant="62" id="Anr-qb-FQ1"/>
+                            <constraint firstItem="Wr4-ds-WZQ" firstAttribute="leading" secondItem="QhL-Bv-71A" secondAttribute="leading" id="SGc-X0-ts4"/>
+                            <constraint firstAttribute="trailing" secondItem="Wr4-ds-WZQ" secondAttribute="trailing" id="fUK-W9-TFq"/>
+                            <constraint firstItem="Wr4-ds-WZQ" firstAttribute="height" secondItem="QhL-Bv-71A" secondAttribute="height" multiplier="1:3" id="gfO-mU-qmc"/>
+                            <constraint firstItem="UhX-Wh-90a" firstAttribute="leading" secondItem="vJ4-FT-fwW" secondAttribute="leading" constant="16" id="j1b-ZO-q38"/>
+                            <constraint firstItem="UhX-Wh-90a" firstAttribute="centerY" secondItem="Wr4-ds-WZQ" secondAttribute="bottom" id="sar-2c-ucc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vJ4-FT-fwW"/>
                     </view>
                     <navigationItem key="navigationItem" id="3DY-eh-LOb"/>
