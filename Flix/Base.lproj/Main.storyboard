@@ -45,7 +45,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycp-5N-ggh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycp-5N-ggh">
                                                     <rect key="frame" x="148" y="45" width="186" height="19.5"/>
                                                     <string key="text">"Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history."</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
@@ -57,7 +57,7 @@
                                                 <constraint firstItem="JoX-Lb-tx8" firstAttribute="top" secondItem="QLm-8H-Frt" secondAttribute="top" id="How-8g-RMW"/>
                                                 <constraint firstItem="QLm-8H-Frt" firstAttribute="leading" secondItem="6tp-JL-YHU" secondAttribute="leading" constant="8" id="TGK-CD-oyf"/>
                                                 <constraint firstItem="QLm-8H-Frt" firstAttribute="top" secondItem="6tp-JL-YHU" secondAttribute="top" constant="8" id="XnI-9S-zLY"/>
-                                                <constraint firstAttribute="bottom" secondItem="QLm-8H-Frt" secondAttribute="bottom" constant="8" id="a5a-BI-JVv"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QLm-8H-Frt" secondAttribute="bottom" constant="8" id="a5a-BI-JVv"/>
                                                 <constraint firstAttribute="trailing" secondItem="JoX-Lb-tx8" secondAttribute="trailing" constant="8" id="aSR-RW-XoG"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ycp-5N-ggh" secondAttribute="bottom" constant="8" id="hZg-5Y-FVe"/>
                                                 <constraint firstItem="Ycp-5N-ggh" firstAttribute="top" secondItem="JoX-Lb-tx8" secondAttribute="bottom" constant="8" id="hcw-bn-tN1"/>
@@ -108,7 +108,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-ds-WZQ">
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-ds-WZQ">
                                 <rect key="frame" x="0.0" y="62" width="375" height="222.5"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UhX-Wh-90a">
@@ -223,12 +223,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="202"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oY7-FC-XM9">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oY7-FC-XM9">
                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="202"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="oY7-FC-XM9" secondAttribute="trailing" id="9ca-XI-DeK"/>
+                                            <constraint firstItem="oY7-FC-XM9" firstAttribute="top" secondItem="vTs-LC-aG7" secondAttribute="top" id="IPM-7u-k4t"/>
+                                            <constraint firstItem="oY7-FC-XM9" firstAttribute="leading" secondItem="vTs-LC-aG7" secondAttribute="leading" id="eGq-tg-njf"/>
+                                            <constraint firstAttribute="bottom" secondItem="oY7-FC-XM9" secondAttribute="bottom" id="vvK-vw-3aF"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="posterImageView" destination="oY7-FC-XM9" id="r89-GE-S7l"/>
                                             <segue destination="j0n-hw-fbL" kind="show" id="hu0-6N-XQV"/>
@@ -274,6 +279,6 @@
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0WJ-gr-Bwf"/>
+        <segue reference="hu0-6N-XQV"/>
     </inferredMetricsTieBreakers>
 </document>

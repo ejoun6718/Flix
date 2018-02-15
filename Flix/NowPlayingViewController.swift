@@ -12,14 +12,21 @@ import KRProgressHUD
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
   
-  @IBOutlet weak var tableView: UITableView! {
+  @IBOutlet weak var tableView: UITableView! /*{
     didSet {
-      self.tableView.rowHeight = 150
+     // self.tableView.rowHeight = 150
+      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.estimatedRowHeight = 50
     }
-  }
+  }*/
   
   var movies: [[String: Any]] = []
   var refreshControl: UIRefreshControl!
+  
+  override func viewWillAppear(_ animated: Bool) {
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 50
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
