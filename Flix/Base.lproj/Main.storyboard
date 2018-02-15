@@ -30,26 +30,39 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="195.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLm-8H-Frt">
-                                                    <rect key="frame" x="15" y="11" width="132" height="174"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLm-8H-Frt">
+                                                    <rect key="frame" x="8" y="8" width="132" height="179.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="132" id="7Wq-jc-kpZ"/>
+                                                        <constraint firstAttribute="height" constant="179.5" id="pTz-6j-GBP"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoX-Lb-tx8">
-                                                    <rect key="frame" x="166" y="11" width="194" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoX-Lb-tx8">
+                                                    <rect key="frame" x="148" y="8" width="186" height="29"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycp-5N-ggh">
-                                                    <rect key="frame" x="166" y="40" width="194" height="145"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ycp-5N-ggh">
+                                                    <rect key="frame" x="148" y="45" width="186" height="19.5"/>
                                                     <string key="text">"Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history."</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JoX-Lb-tx8" firstAttribute="top" secondItem="QLm-8H-Frt" secondAttribute="top" id="How-8g-RMW"/>
+                                                <constraint firstItem="QLm-8H-Frt" firstAttribute="leading" secondItem="6tp-JL-YHU" secondAttribute="leading" constant="8" id="TGK-CD-oyf"/>
+                                                <constraint firstItem="QLm-8H-Frt" firstAttribute="top" secondItem="6tp-JL-YHU" secondAttribute="top" constant="8" id="XnI-9S-zLY"/>
+                                                <constraint firstAttribute="bottom" secondItem="QLm-8H-Frt" secondAttribute="bottom" constant="8" id="a5a-BI-JVv"/>
+                                                <constraint firstAttribute="trailing" secondItem="JoX-Lb-tx8" secondAttribute="trailing" constant="8" id="aSR-RW-XoG"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ycp-5N-ggh" secondAttribute="bottom" constant="8" id="hZg-5Y-FVe"/>
+                                                <constraint firstItem="Ycp-5N-ggh" firstAttribute="top" secondItem="JoX-Lb-tx8" secondAttribute="bottom" constant="8" id="hcw-bn-tN1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ycp-5N-ggh" secondAttribute="trailing" constant="8" id="lPD-6w-PgB"/>
+                                                <constraint firstItem="JoX-Lb-tx8" firstAttribute="leading" secondItem="QLm-8H-Frt" secondAttribute="trailing" constant="8" id="qp5-lS-usb"/>
+                                                <constraint firstItem="Ycp-5N-ggh" firstAttribute="leading" secondItem="JoX-Lb-tx8" secondAttribute="leading" id="x32-Ad-Sei"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="Ycp-5N-ggh" id="atG-hs-XF8"/>
@@ -242,6 +255,6 @@
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hu0-6N-XQV"/>
+        <segue reference="0WJ-gr-Bwf"/>
     </inferredMetricsTieBreakers>
 </document>
