@@ -12,21 +12,15 @@ import KRProgressHUD
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
   
-  @IBOutlet weak var tableView: UITableView! /*{
+  @IBOutlet weak var tableView: UITableView! {
     didSet {
-     // self.tableView.rowHeight = 150
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.estimatedRowHeight = 50
     }
-  }*/
+  }
   
   var movies: [[String: Any]] = []
   var refreshControl: UIRefreshControl!
-  
-  override func viewWillAppear(_ animated: Bool) {
-    tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 50
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -105,15 +99,15 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let cell = sender as! UITableViewCell
     // Get the index path from the cell that was tapped
     if let indexPath = tableView.indexPath(for: cell) {
-        let movie = movies[indexPath.row]
-        let detailViewController = segue.destination as! DetailViewController
-        // Pass on the data to the Detail ViewController
-        detailViewController.movie = movie
+      let movie = movies[indexPath.row]
+      let detailViewController = segue.destination as! DetailViewController
+      // Pass on the data to the Detail ViewController
+      detailViewController.movie = movie
     }
   }
 }

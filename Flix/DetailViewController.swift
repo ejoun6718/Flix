@@ -32,7 +32,6 @@ class DetailViewController: UIViewController {
       titleLabel.text = movie["title"] as? String
       releaseDateLabel.text = movie["release_date"] as? String
       overviewLabel.text = movie["overview"] as? String
-      overviewLabel.sizeToFit()
       
       let backdropPathString = movie[MovieKeys.backdropPath] as! String
       let posterPathString = movie[MovieKeys.posterPath] as! String

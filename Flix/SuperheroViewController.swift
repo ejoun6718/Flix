@@ -9,18 +9,18 @@
 import UIKit
 
 class SuperheroViewController: UIViewController, UICollectionViewDataSource {
-
+  
   @IBOutlet weak var collectionView: UICollectionView!
   
   var movies: [[String: Any]] = []
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        collectionView.dataSource = self
+    super.viewDidLoad()
     
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+    // Do any additional setup after loading the view.
+    collectionView.dataSource = self
+    
+    let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
     layout.minimumInteritemSpacing = 5
     layout.minimumLineSpacing = layout.minimumInteritemSpacing
     let cellsPerLine: CGFloat = 2
@@ -28,8 +28,8 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
     let width = collectionView.frame.size.width / cellsPerLine - interItemSpacingTotal / cellsPerLine
     layout.itemSize = CGSize(width: width, height: width * 3 / 2)
     
-        fetchMovies()
-    }
+    fetchMovies()
+  }
   
   func fetchMovies() {
     let url = URL(string: "https://api.themoviedb.org/3/movie/284053/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1")!
@@ -50,12 +50,12 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
     }
     task.resume()
   }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return movies.count
   }
@@ -70,7 +70,7 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
     }
     return cell
   }
-
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let cell = sender as! UICollectionViewCell
     // Get the index path from the cell that was tapped
