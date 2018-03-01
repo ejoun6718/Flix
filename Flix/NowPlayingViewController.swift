@@ -28,7 +28,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     KRProgressHUD
       .set(style: .custom(background: .black, text: .white, icon: nil))
       .set(maskType: .white)
-    
+
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector (NowPlayingViewController.didPullToRefresh(_:)), for: . valueChanged)
     tableView.insertSubview(refreshControl, at: 0)
@@ -63,12 +63,13 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+    cell.selectionStyle = .none
     
     cell.movie = movies[indexPath.row]
     
     return cell
   }
-  
+
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
