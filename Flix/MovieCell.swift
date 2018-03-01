@@ -14,8 +14,17 @@ internal class MovieCell : UITableViewCell {
   @IBOutlet weak var overviewLabel: UILabel!
   @IBOutlet weak var posterImageView: UIImageView!
   
+  var movie: Movie! {
+    didSet {
+      titleLabel.text = movie.title
+      overviewLabel.text = movie.overview
+      if movie.posterUrl != nil {
+        posterImageView.af_setImage(withURL: movie.posterUrl!)
+      }
+    }
+  }
+  
   override internal func awakeFromNib() {
-    // Initialization code
   }
   
   override internal func setSelected(_ selected: Bool, animated: Bool) {

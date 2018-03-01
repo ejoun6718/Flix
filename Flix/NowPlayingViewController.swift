@@ -73,22 +73,10 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
     
-    // No color when the user selects cell
-    cell.selectionStyle = .none
-    
-    let movie = movies[indexPath.row]
-    let title = movie.title
-    let overview = movie.overview
-    
-    cell.titleLabel.text = title
-    cell.overviewLabel.text = overview
-    cell.overviewLabel.sizeToFit()
-    
-    if movie.posterUrl != nil {
-      cell.posterImageView.af_setImage(withURL: movie.posterUrl!)
-    }
+    cell.movie = movies[indexPath.row]
     
     return cell
   }
